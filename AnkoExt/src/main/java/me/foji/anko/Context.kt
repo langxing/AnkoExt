@@ -8,10 +8,8 @@ import android.content.SharedPreferences
 import android.net.wifi.WifiManager
 import android.preference.PreferenceManager
 import android.support.annotation.LayoutRes
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
+import android.view.*
+import android.widget.Toast
 
 /**
  * 该文件主要增加一些Context便捷方法，简化Context部分操作
@@ -52,6 +50,25 @@ fun Context.wifiManager(): WifiManager {
 fun Context.defaultSharedPreferences(): SharedPreferences {
     return PreferenceManager.getDefaultSharedPreferences(this)
 }
+
+/**
+ * 在中间显示Tost
+ */
+fun Context.showCenterToast(message : String) {
+    val toast = Toast.makeText(this, message, Toast.LENGTH_SHORT)
+    toast.setGravity(Gravity.CENTER, 0, 0)
+    toast.show()
+}
+
+/**
+ * 获取屏幕宽度
+ */
+fun Context.screenWidth() = resources.displayMetrics.widthPixels
+
+/**
+ * 获取屏幕高度
+ */
+fun Context.screenHeight() = resources.displayMetrics.heightPixels
 
 @Suppress("UNCHECKED_CAST")
 fun <V: View> Context.inflate(@LayoutRes layoutId: Int, parent: ViewGroup? = null, attachToRoot: Boolean = false): V {
