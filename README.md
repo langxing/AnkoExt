@@ -90,7 +90,6 @@ val px = 12.toPx(this)
 val dateString = 12L.toDateString("yy-MM-dd HH:mm")
 </pre>
 
-
 针对键盘的隐藏和显示，**AnkoExt**提供了一些相应的接口
 ### Kotlin
 <pre>
@@ -107,13 +106,11 @@ val dateString = 12L.toDateString("yy-MM-dd HH:mm")
         }
 </pre>
 
-
 某些时候，需要显示Toast在屏幕正中间，可以这么处理
 ### kotlin
 <pre>
 showCenterToast(screenWidth().toString())
 </pre>
-
 
 对于屏幕宽度和高度的获取，**AnkoExt**提供了以下方法，以供使用
 ### kotlin
