@@ -94,10 +94,6 @@ val dateString = 12L.toDateString("yy-MM-dd HH:mm")
 ### Kotlin
 <pre>
     edit_query.setOnTouchListener(View.OnTouchListener { view, motionEvent ->
-            edit_query.isFocusable = true
-            edit_query.isFocusableInTouchMode = true
-            edit_query.requestFocus()
-            edit_query.findFocus()
             edit_query.showSoftKeyboard()
             true
         })
