@@ -89,3 +89,33 @@ val dp = 12.toDp(this)
 val px = 12.toPx(this)
 val dateString = 12L.toDateString("yy-MM-dd HH:mm")
 </pre>
+
+针对键盘的隐藏和显示，**AnkoExt**提供了一些相应的接口
+### Kotlin
+<pre>
+    edit_query.setOnTouchListener(View.OnTouchListener { view, motionEvent ->
+            edit_query.isFocusable = true
+            edit_query.isFocusableInTouchMode = true
+            edit_query.requestFocus()
+            edit_query.findFocus()
+            edit_query.showSoftKeyboard()
+            true
+        })
+     text.setOnClickListener {
+	    edit_query.hideSoftKeyboard()
+        }
+</pre>
+
+某些时候，需要显示Toast在屏幕正中间，可以这么处理
+### kotlin
+<pre>
+showCenterToast(screenWidth().toString())
+</pre>
+
+对于屏幕宽度和高度的获取，**AnkoExt**提供了以下方法，以供使用
+### kotlin
+<pre>
+var width = screenWidth()
+var height = screenHeight()
+</pre>
+
