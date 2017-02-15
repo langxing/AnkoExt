@@ -93,11 +93,13 @@ val dateString = 12L.toDateString("yy-MM-dd HH:mm")
 针对键盘的隐藏和显示，**AnkoExt**提供了一些相应的接口
 ### Kotlin
 <pre>
-    edit_query.setOnTouchListener(View.OnTouchListener { view, motionEvent ->
+    ##获取焦点并显示键盘
+    edit_query.setOnTouchListener(View.OnTouchListener { view, motionEvent ->
             edit_query.showSoftKeyboard()
             true
         })
-     text.setOnClickListener {
+     ##清除焦点并关闭键盘
+     text.setOnClickListener {
 	    edit_query.hideSoftKeyboard()
         }
 </pre>
